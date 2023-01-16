@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:foodpanda/constants/color_const.dart';
 import 'package:foodpanda/constants/pics_const.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import '../components/order_card.dart';
 import '../components/textfield_widget.dart';
 
@@ -57,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             textFieldWidget(context),
             SizedBox(
-              height: sizeh * 0.028,
+              height: sizeh * 0.018,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: sizew * 0.033),

@@ -4,12 +4,23 @@ import 'package:velocity_x/velocity_x.dart';
 
 import '../../constants/color_const.dart';
 
-class OrderCard extends StatelessWidget {
+class OrderCard extends StatefulWidget {
   const OrderCard({
     Key? key,
     required this.index,
   }) : super(key: key);
   final int index;
+
+  @override
+  State<OrderCard> createState() => _OrderCardState();
+}
+
+class _OrderCardState extends State<OrderCard> {
+  @override
+  void initState() {
+    super.initState();
+    PicsConst.getData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +41,7 @@ class OrderCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   child: Image.asset(
                     //this is image
-                    PicsConst.dataList[index].image,
+                    PicsConst.dataList[widget.index].image,
                   ),
                 ),
               ),
@@ -53,7 +64,7 @@ class OrderCard extends StatelessWidget {
                         ),
                       ),
                       //this is discount
-                      child: PicsConst.dataList[index].discount.text
+                      child: PicsConst.dataList[widget.index].discount.text
                           .size(sizew * 0.010)
                           .white
                           .make(),
@@ -66,7 +77,7 @@ class OrderCard extends StatelessWidget {
                           color: white,
                           borderRadius: BorderRadius.circular(15)),
                       //this is time
-                      child: PicsConst.dataList[index].time.text
+                      child: PicsConst.dataList[widget.index].time.text
                           .size(sizew * 0.005)
                           .black
                           .make(),
@@ -80,8 +91,13 @@ class OrderCard extends StatelessWidget {
             spacing: sizeh * 0.0050,
             direction: Axis.vertical,
             children: [
-              PicsConst.dataList[index].shop.text.bold.size(sizew * 0.018).make(),
-              '${PicsConst.dataList[index].price} Rs. Pakistani'.text.size(sizew * 0.010).make(),
+              PicsConst.dataList[widget.index].shop.text.bold
+                  .size(sizew * 0.018)
+                  .make(),
+              '${PicsConst.dataList[widget.index].price} Rs. Pakistani'
+                  .text
+                  .size(sizew * 0.010)
+                  .make(),
               Wrap(
                 children: [
                   const Icon(
@@ -101,9 +117,9 @@ class OrderCard extends StatelessWidget {
                       TextSpan(
                         children: [
                           //this is reviews & ratings
-                          PicsConst.dataList[index].reviews.textSpan.bold
+                          PicsConst.dataList[widget.index].reviews.textSpan.bold
                               .make(),
-                          PicsConst.dataList[index].rating.textSpan.bold
+                          PicsConst.dataList[widget.index].rating.textSpan.bold
                               .color(grey)
                               .make()
                         ],

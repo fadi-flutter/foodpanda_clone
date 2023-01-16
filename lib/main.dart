@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:foodpanda/constants/color_const.dart';
-import 'package:foodpanda/views/screens/home_screen.dart';
+import 'package:foodpanda/views/screens/populardish_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+      ]);
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -27,7 +30,8 @@ class MyApp extends StatelessWidget {
         ),
         primaryColor: pink,
       ),
-      home:  HomeScreen(),
+      home: const PopularDishScreen(),
+      // home:  HomeScreen(),
     );
   }
 }

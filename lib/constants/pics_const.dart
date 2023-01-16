@@ -4,6 +4,7 @@ class PicsConst {
   static List<FoodModel> dataList = [];
 
   static getData() {
+    dataList.clear();
     for (Map<String, dynamic> i in picsList) {
       dataList.add(FoodModel.fromJson(i));
     }
@@ -17,7 +18,8 @@ class PicsConst {
       'time': '25 min',
       'discount': 'Flat 40% off',
       'shop': 'Burger Lab',
-      'price': '600'
+      'price': '600',
+      'item' : 'Large burger'
     },
     {
       'image': 'assets/images/chinese.jpg',
@@ -26,7 +28,8 @@ class PicsConst {
       'time': '35 min',
       'discount': 'Flat 18% off',
       'shop': 'Baba Tikka',
-      'price': '300'
+      'price': '300',
+      'item' : 'Chinese Noodles'
     },
     {
       'image': 'assets/images/cake.jpg',
@@ -35,7 +38,8 @@ class PicsConst {
       'time': '50 min',
       'discount': 'Flat 10% off',
       'shop': 'Pizza Stove',
-      'price': '1200'
+      'price': '1200',
+      'item' : 'Chocolate Cake'
     },
     {
       'image': 'assets/images/chicken.jpg',
@@ -44,7 +48,8 @@ class PicsConst {
       'time': '5 min',
       'discount': 'Flat 30% off',
       'shop': 'Kitchen & Knife',
-      'price': '740'
+      'price': '740',
+      'item' : 'Fry Chicken'
     },
   ];
 }
